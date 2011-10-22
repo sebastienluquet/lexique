@@ -1,5 +1,7 @@
 LexiqueOnRails::Application.routes.draw do
-  resources :words
+  resources :words do
+    get :autocomplete_word_name, :on => :collection
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

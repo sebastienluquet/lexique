@@ -1,7 +1,7 @@
 <%= form_for :word, :url => words_path, :html => { :method => :get } do |f| %>
   <div class="field">
     <%= f.label :search %><br />
-    <%= f.text_field :name %>
+    <%= f.autocomplete_field :name, autocomplete_word_name_words_path %>
   </div>
 <% end %>
 

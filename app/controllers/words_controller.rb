@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  autocomplete :word, :name
   # GET /words
   # GET /words.json
   def index
