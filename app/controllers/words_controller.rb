@@ -2,7 +2,11 @@ class WordsController < ApplicationController
   # GET /words
   # GET /words.json
   def index
-    @words = Word.all
+    if params[:word] and !params[:word][:name].blank?
+      @words = Word.where ["name LIKE :name", { :name => "%#{params[:word][:name]}%"}]
+    else
+      @words = Word.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

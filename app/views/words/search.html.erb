@@ -1,4 +1,11 @@
-<h1>Listing words</h1>
+<%= form_for :word, :url => words_path, :html => { :method => :get } do |f| %>
+  <div class="field">
+    <%= f.label :search %><br />
+    <%= f.text_field :name %>
+  </div>
+<% end %>
+
+<h1>Last words</h1>
 
 <table>
   <tr>
