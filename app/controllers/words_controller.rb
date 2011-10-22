@@ -10,6 +10,17 @@ class WordsController < ApplicationController
     end
   end
 
+  # GET /words/search
+  # GET /words/search.json
+  def search
+    @words = Word.all(:order => 'created_at DESC', :limit => 20)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @words }
+    end
+  end
+  
   # GET /words/1
   # GET /words/1.json
   def show
