@@ -39,9 +39,10 @@ class WordsController < ApplicationController
   # GET /words/search.json
   def search
     @words = Word.all(:order => 'created_at DESC', :limit => 20)
-
+    @title = "Last words"
+    
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render :action => :index } 
       format.json { render :json => @words }
     end
   end
