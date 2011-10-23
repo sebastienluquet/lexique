@@ -1,4 +1,4 @@
-<%= form_for(@word) do |f| %>
+<%= nested_form_for(@word) do |f| %>
   <% if @word.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@word.errors.count, "error") %> prohibited this word from being saved:</h2>
@@ -19,6 +19,18 @@
     <%= f.label :definition %><br />
     <%= f.text_area :definition %>
   </div>
+  <%= f.fields_for :linked_words do |word_form| %>
+    <% unless word_form.object.new_record? %>
+      <%=  link_to word_form.object.linked_to.name, word_path(word_form.object.linked_to) %>
+    <% else %>
+      <%  word_form.object.build_linked_to %>
+        <%= word_form.fields_for :linked_to do |linked_form| %>
+        <%= linked_form.autocomplete_field :name, autocomplete_word_name_words_path %>
+      <% end %>
+    <% end %>
+    <%= word_form.link_to_remove "Remove this linked word" %>
+  <% end %>
+  <%= f.link_to_add "Add a linked word", :linked_words %></p>
   <div class="actions">
     <%= f.submit %>
   </div>

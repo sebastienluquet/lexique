@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  word: :one
+  linked_to: :one
+
+two:
+  word: :one
+  linked_to: :two

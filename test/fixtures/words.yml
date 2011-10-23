@@ -1,5 +1,4 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
+--- 
 one:
   name: MyString
   definition: MyText
@@ -7,3 +6,135 @@ one:
 two:
   name: MyString
   definition: MyText
+words_10: 
+  created_at: 2011-10-22 10:03:51.556544
+  definition: ""
+  id: 10
+  name: foo7
+  updated_at: 2011-10-22 10:03:51.556544
+words_11: 
+  created_at: 2011-10-22 10:03:53.650294
+  definition: ""
+  id: 11
+  name: foo8
+  updated_at: 2011-10-22 10:03:53.650294
+words_12: 
+  created_at: 2011-10-22 10:03:56.400294
+  definition: ""
+  id: 12
+  name: foo9
+  updated_at: 2011-10-22 10:03:56.400294
+words_13: 
+  created_at: 2011-10-22 10:04:04.040919
+  definition: ""
+  id: 13
+  name: bar1
+  updated_at: 2011-10-22 10:04:04.040919
+words_14: 
+  created_at: 2011-10-22 10:04:06.337794
+  definition: ""
+  id: 14
+  name: bar2
+  updated_at: 2011-10-22 10:04:06.337794
+words_15: 
+  created_at: 2011-10-22 10:04:09.384669
+  definition: ""
+  id: 15
+  name: bar3
+  updated_at: 2011-10-22 10:04:09.384669
+words_16: 
+  created_at: 2011-10-22 10:04:12.009669
+  definition: ""
+  id: 16
+  name: bar4
+  updated_at: 2011-10-22 10:04:12.009669
+words_17: 
+  created_at: 2011-10-22 10:04:26.556544
+  definition: ""
+  id: 17
+  name: bar5
+  updated_at: 2011-10-22 10:04:26.556544
+words_18: 
+  created_at: 2011-10-22 10:04:28.884669
+  definition: ""
+  id: 18
+  name: bar6
+  updated_at: 2011-10-22 10:04:28.884669
+words_19: 
+  created_at: 2011-10-22 10:04:33.040919
+  definition: ""
+  id: 19
+  name: bar7
+  updated_at: 2011-10-22 10:04:33.040919
+words_2: 
+  created_at: 2011-10-22 09:44:09.494044
+  definition: Foo
+  id: 2
+  name: foo
+  updated_at: 2011-10-22 14:14:08.212794
+words_20: 
+  created_at: 2011-10-22 10:04:43.119044
+  definition: ""
+  id: 20
+  name: bar8
+  updated_at: 2011-10-22 10:04:43.119044
+words_21: 
+  created_at: 2011-10-22 10:04:51.822169
+  definition: ""
+  id: 21
+  name: bar9
+  updated_at: 2011-10-22 10:04:51.822169
+words_22: 
+  created_at: 2011-10-22 10:05:07.165919
+  definition: ""
+  id: 22
+  name: baz
+  updated_at: 2011-10-22 10:05:07.165919
+words_23: 
+  created_at: 2011-10-22 14:13:15.931544
+  definition: 
+  id: 23
+  name: Console
+  updated_at: 2011-10-22 14:13:15.931544
+words_3: 
+  created_at: 2011-10-22 09:47:58.040919
+  definition: ""
+  id: 3
+  name: bar
+  updated_at: 2011-10-22 09:47:58.040919
+words_4: 
+  created_at: 2011-10-22 10:03:37.259669
+  definition: ""
+  id: 4
+  name: foo1
+  updated_at: 2011-10-22 10:03:37.259669
+words_5: 
+  created_at: 2011-10-22 10:03:40.462794
+  definition: ""
+  id: 5
+  name: foo2
+  updated_at: 2011-10-22 10:03:40.462794
+words_6: 
+  created_at: 2011-10-22 10:03:42.775294
+  definition: ""
+  id: 6
+  name: foo3
+  updated_at: 2011-10-22 10:03:42.775294
+words_7: 
+  created_at: 2011-10-22 10:03:44.790919
+  definition: ""
+  id: 7
+  name: foo4
+  updated_at: 2011-10-22 10:03:44.790919
+words_8: 
+  created_at: 2011-10-22 10:03:46.853419
+  definition: ""
+  id: 8
+  name: foo5
+  updated_at: 2011-10-22 10:03:46.853419
+words_9: 
+  created_at: 2011-10-22 10:03:49.369044
+  definition: ""
+  id: 9
+  name: foo6
+  updated_at: 2011-10-22 10:03:49.369044

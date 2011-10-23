@@ -1,4 +1,24 @@
 class WordsController < ApplicationController
+  before_filter :fix_attributes, :only => [ :create, :update ]
+  def fix_attributes
+    if params[:word] and params[:word][:linked_words_attributes]
+      params[:word][:linked_words_attributes].each do |k,v|
+        if k['new_']
+          w = Word.find_or_create_by_name params[:word][:linked_words_attributes][k][:linked_to_attributes][:name]
+          params[:word][:linked_words_attributes][k].delete :linked_to_attributes
+          params[:word][:linked_words_attributes][k][:linked_to_id] = w.id
+        end
+      end
+    end
+  end
+  def back_office
+    session[:user_id] = 1
+    redirect_to words_path
+  end
+  def sign_out
+    session[:user_id] = nil
+    redirect_to root_path
+  end
   autocomplete :word, :name
   # GET /words
   # GET /words.json
@@ -25,7 +45,16 @@ class WordsController < ApplicationController
       format.json { render :json => @words }
     end
   end
-  
+
+  def todo
+    @words = Word.todo
+
+    respond_to do |format|
+      format.html { render :action => :index } 
+      format.json { render :json => @words }
+    end
+  end
+
   # GET /words/1
   # GET /words/1.json
   def show
