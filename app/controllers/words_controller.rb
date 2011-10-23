@@ -25,7 +25,16 @@ class WordsController < ApplicationController
       format.json { render :json => @words }
     end
   end
-  
+
+  def todo
+    @words = Word.todo
+
+    respond_to do |format|
+      format.html { render :action => :index } 
+      format.json { render :json => @words }
+    end
+  end
+
   # GET /words/1
   # GET /words/1.json
   def show

@@ -3,10 +3,17 @@ require 'test_helper'
 class WordsControllerTest < ActionController::TestCase
   setup do
     @word = words(:one)
+    @request.session[:user_id] = 1
   end
 
   test "should get index" do
     get :index
+    assert_response :success
+    assert_not_nil assigns(:words)
+  end
+
+  test "should get todo" do
+    get :todo
     assert_response :success
     assert_not_nil assigns(:words)
   end
