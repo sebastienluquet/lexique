@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  # gestion de variable de session pour savoir si l'utilisateur est anonyme/admin
   helper_method :current_user
   protected
     def current_user=(new_user)

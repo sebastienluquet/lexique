@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  # Création des mots qui n'existe pas
   before_filter :fix_attributes, :only => [ :create, :update ]
   def fix_attributes
     if params[:word] and params[:word][:linked_words_attributes]
@@ -11,6 +12,8 @@ class WordsController < ApplicationController
       end
     end
   end
+  
+  # Switch entre vue admin/anonyme
   def back_office
     session[:user_id] = 1
     redirect_to words_path
@@ -19,7 +22,10 @@ class WordsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path
   end
+  
+  # autocompletion pour la recherche/mot associé
   autocomplete :word, :name
+  
   # GET /words
   # GET /words.json
   def index
@@ -38,6 +44,7 @@ class WordsController < ApplicationController
   # GET /words/search
   # GET /words/search.json
   def search
+    #filtrage pour la page d'accueil
     @words = Word.all(:order => 'created_at DESC', :limit => 20)
     @title = "Last words"
     
@@ -48,6 +55,7 @@ class WordsController < ApplicationController
   end
 
   def todo
+    #filtrage pour les mots à traiter
     @words = Word.todo
 
     respond_to do |format|

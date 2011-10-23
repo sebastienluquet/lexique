@@ -12,6 +12,12 @@ class WordsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:words)
   end
 
+  test "should get search result" do
+    get :index, :word => { :name => 'foo' }
+    assert_response :success
+    assert_not_nil assigns(:words)
+  end
+  
   test "should get todo" do
     get :todo
     assert_response :success
