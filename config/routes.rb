@@ -1,6 +1,9 @@
 LexiqueOnRails::Application.routes.draw do
   resources :words do
     get :autocomplete_word_name, :on => :collection
+    get :back_office, :on => :collection
+    get :sign_out, :on => :collection
+    get :todo, :on => :collection
   end
 
   # The priority is based upon order of creation:

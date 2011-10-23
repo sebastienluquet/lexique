@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if current_user and current_user.is_admin? %>
+  <%= link_to "Todo", todo_words_path %>
+  <%= link_to "Sign out", sign_out_words_path %>
+<% else %>
+  <%= link_to "Back Office", back_office_words_path %>
+<% end %>
 <%= yield %>
 
 </body>
